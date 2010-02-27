@@ -5,7 +5,7 @@ use Plack::Runner;
 
 my @argv = @ARGV;
 
-my $runner = Plack::Runner->new(server => 'Starman', env => 'production');
+my $runner = Plack::Runner->new(server => 'Starman', env => 'deployment');
 $runner->parse_options(@argv);
 $runner->set_options(argv => \@argv) if $runner->can('set_options');
 $runner->run;
@@ -25,7 +25,7 @@ starman - Starman launcher
 
 =item -l, --listen
 
-  --listen HOST:PORT --listen PORT --listen UNIX_SOCKET
+  --listen HOST:PORT --listen :PORT --listen UNIX_SOCKET
 
 Specifies the TCP address, ports and UNIX domain sockets to bind to
 wait for requests. You can repeat as many times as you want and mix

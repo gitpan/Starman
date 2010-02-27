@@ -2,7 +2,7 @@ package Starman;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.1000';
+our $VERSION = '0.1001';
 
 1;
 __END__
@@ -21,7 +21,7 @@ Starman - High-performance preforking PSGI web server
   > starman
 
   # run with Server::Starter
-  > start_server --port 127.0.0.1:80 -- starman --max-servers 32 myapp.psgi
+  > start_server --port 127.0.0.1:80 -- starman --workers 32 myapp.psgi
 
   # UNIX domain sockets
   > starman --listen /tmp/starman.sock
@@ -75,15 +75,15 @@ Supports chunked requests and responses, keep-alive and pipeline requests.
 
 Here's a simple benchmark using C<Hello.psgi>.
 
-  -- server: Starman
-  Requests per second:    6413.87 [#/sec] (mean)
-  -- server: AnyEvent
+  -- server: Starman (workers=10)
+  Requests per second:    6849.16 [#/sec] (mean)
+  -- server: Twiggy
   Requests per second:    3911.78 [#/sec] (mean)
   -- server: AnyEvent::HTTPD
   Requests per second:    2738.49 [#/sec] (mean)
-  -- server: Standalone
-  Requests per second:    1045.66 [#/sec] (mean)
-  -- server: Standalone (prefork)
+  -- server: HTTP::Server::PSGI
+  Requests per second:    2218.16 [#/sec] (mean)
+  -- server: HTTP::Server::PSGI (workers=10)
   Requests per second:    2792.99 [#/sec] (mean)
   -- server: HTTP::Server::Simple
   Requests per second:    1435.50 [#/sec] (mean)
@@ -100,14 +100,15 @@ This benchmark was processed with C<ab -c 10 -t 1 -k> on MacBook Pro
 =head2 Starman?
 
 The name Starman is taken from the song (I<Star na Otoko>) by the
-Japanese rock band Unicorn. It's also a power-up from Super Mario
-Brothers and a character from the video game Earthbound.
+Japanese rock band Unicorn (yes, Unicorn!). It's also known as a song
+by David Bowie, a power-up from Super Mario Brothers and a character
+from Earthbound, all of which I love.
 
 =head2 Why the cute name instead of more descriptive namespace? Are you on drugs?
 
 I'm sick of naming Perl software like
 HTTP::Server::PSGI::How::Its::Written::With::What::Module and people
-call it HSSPHIWWWM on IRC. It's hard to say on speeches and newbies
+call it HSPHIWWWM on IRC. It's hard to say on speeches and newbies
 would ask questions what they stand for every day. That's crazy.
 
 This module actually includes the longer alias and an empty subclass
