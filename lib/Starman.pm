@@ -2,7 +2,7 @@ package Starman;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.1001';
+our $VERSION = '0.1002';
 
 1;
 __END__
@@ -68,6 +68,10 @@ Can run any PSGI applications and frameworks
 =item HTTP/1.1 support
 
 Supports chunked requests and responses, keep-alive and pipeline requests.
+
+=item UNIX only
+
+This server does not support Win32.
 
 =back
 
