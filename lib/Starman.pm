@@ -2,7 +2,7 @@ package Starman;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.1002';
+our $VERSION = '0.1003';
 
 1;
 __END__
@@ -91,7 +91,7 @@ Here's a simple benchmark using C<Hello.psgi>.
   Requests per second:    2792.99 [#/sec] (mean)
   -- server: HTTP::Server::Simple
   Requests per second:    1435.50 [#/sec] (mean)
-  -- server: Coro
+  -- server: Corona
   Requests per second:    2332.00 [#/sec] (mean)
   -- server: POE
   Requests per second:    503.59 [#/sec] (mean)
