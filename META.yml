@@ -29,10 +29,10 @@ requires:
   HTTP::Parser::XS: 0
   HTTP::Status: 0
   Net::Server: 0.91
-  Plack: 0.9925
+  Plack: 0.993
   parent: 0
   perl: 5.8.1
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/miyagawa/Starman.git
-version: 0.1007
+version: 0.2000
