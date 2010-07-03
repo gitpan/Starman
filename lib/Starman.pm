@@ -2,7 +2,7 @@ package Starman;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.2004';
+our $VERSION = '0.2005';
 
 1;
 __END__
@@ -13,7 +13,7 @@ __END__
 
 =head1 NAME
 
-Starman - High-performance preforking PSGI web server
+Starman - High-performance preforking PSGI/Plack web server
 
 =head1 SYNOPSIS
 

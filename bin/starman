@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 use strict;
-use lib "lib";
 use Plack::Runner;
 
 sub version {
@@ -137,6 +136,22 @@ Disable Keep-alive persistent connections. It is an useful workaround
 if you run Starman behind a broken frontend proxy that tries to pool
 connections more than a number of backend workers (i.e. Apache
 mpm_prefork + mod_proxy).
+
+=item --user
+
+To listen on a low-numbered (E<lt>1024) port, it will be necessary to
+start the server as root. Use the C<--user> option to specify a userid
+or username that the server process should switch to after binding to
+the port.
+
+Defaults to the current userid.
+
+=item --group
+
+Specify the group id or group name that the server should switch to after
+binding to the port.  This option is usually used with C<--user>.
+
+Defaults to the current group id.
 
 =back
 
