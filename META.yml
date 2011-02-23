@@ -28,10 +28,11 @@ requires:
   HTTP::Parser::XS: 0
   HTTP::Status: 0
   Net::Server: 0.91
-  Plack: 0.9931
+  Plack: 0.9971
+  Test::TCP: 1.11
   parent: 0
   perl: 5.8.1
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/miyagawa/Starman.git
-version: 0.2008
+version: 0.2008_1
