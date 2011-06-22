@@ -40,6 +40,10 @@ sub run {
     if (! exists $options->{keepalive_timeout}) {
         $options->{keepalive_timeout} = 1;
     }
+    # Making it prettier I guess ? We can always get rid of it if we don't mind $options->{'error-log'}
+    if ($options->{'error-log'}) {
+        $options->{error_log} = 1;
+    }
 
     my($host, $port, $proto);
     for my $listen (@{$options->{listen} || [ "$options->{host}:$options->{port}" ]}) {
@@ -64,6 +68,7 @@ sub run {
         proto                      => $proto,
         serialize                  => 'flock',
         log_level                  => DEBUG ? 4 : 2,
+        ($options->{error_log} ? ( log_file => $options->{error_log} ) : () ),
         min_servers                => $options->{min_servers}       || $workers,
         min_spare_servers          => $options->{min_spare_servers} || $workers - 1,
         max_spare_servers          => $options->{max_spare_servers} || $workers - 1,
@@ -156,6 +161,7 @@ sub process_request {
             'psgi.multiprocess' => Plack::Util::TRUE,
             'psgix.io'          => $conn,
             'psgix.input.buffered' => Plack::Util::TRUE,
+            'psgix.harakiri' => Plack::Util::TRUE,
         };
 
         # Parse headers
@@ -233,7 +239,7 @@ sub process_request {
             if ( $self->{client}->{inputbuf} ) {
                 if ( $self->{client}->{inputbuf} =~ /^(?:GET|HEAD)/ ) {
                     if ( DEBUG ) {
-                        warn "Pipelined GET/HEAD request in input buffer: " 
+                        warn "Pipelined GET/HEAD request in input buffer: "
                             . dump( $self->{client}->{inputbuf} ) . "\n";
                     }
 
@@ -396,6 +402,11 @@ sub _prepare_env {
 sub _finalize_response {
     my($self, $env, $res) = @_;
 
+    if ($env->{'psgix.harakiri.commit'}) {
+        $self->{client}->{keepalive} = 0;
+        $self->{client}->{harakiri} = 1;
+    }
+
     my $protocol = $env->{SERVER_PROTOCOL};
     my $status   = $res->[0];
     my $message  = status_message($status);
@@ -477,6 +488,13 @@ sub _finalize_response {
             close => sub {
                 syswrite $conn, "0$CRLF$CRLF" if $chunked;
             };
+    }
+}
+
+sub post_client_connection_hook {
+    my $self = shift;
+    if ($self->{client}->{harakiri}) {
+        exit;
     }
 }
 
