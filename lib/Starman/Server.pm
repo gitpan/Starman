@@ -40,10 +40,6 @@ sub run {
     if (! exists $options->{keepalive_timeout}) {
         $options->{keepalive_timeout} = 1;
     }
-    # Making it prettier I guess ? We can always get rid of it if we don't mind $options->{'error-log'}
-    if ($options->{'error-log'}) {
-        $options->{error_log} = 1;
-    }
 
     my($host, $port, $proto);
     for my $listen (@{$options->{listen} || [ "$options->{host}:$options->{port}" ]}) {
@@ -416,7 +412,10 @@ sub _finalize_response {
 
     # Switch on Transfer-Encoding: chunked if we don't know Content-Length.
     my $chunked;
-    while (my($k, $v) = splice @{$res->[1]}, 0, 2) {
+    my $headers = $res->[1];
+    for (my $i = 0; $i < @$headers; $i += 2) {
+        my $k = $headers->[$i];
+        my $v = $headers->[$i + 1];
         next if $k eq 'Connection';
         push @headers, "$k: $v";
         $headers{lc $k} = $v;
