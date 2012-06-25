@@ -176,8 +176,8 @@ sub process_request {
         my $env = {
             REMOTE_ADDR     => $self->{server}->{peeraddr},
             REMOTE_HOST     => $self->{server}->{peerhost} || $self->{server}->{peeraddr},
-            SERVER_NAME     => $self->{server}->{sockaddr}, # XXX: needs to be resolved?
-            SERVER_PORT     => $self->{server}->{sockport},
+            SERVER_NAME     => $self->{server}->{sockaddr} || 0, # XXX: needs to be resolved?
+            SERVER_PORT     => $self->{server}->{sockport} || 0,
             SCRIPT_NAME     => '',
             'psgi.version'      => [ 1, 1 ],
             'psgi.errors'       => *STDERR,
@@ -406,7 +406,7 @@ sub _prepare_env {
 
                 if ($chunk_len == 0) {
                     last DECHUNK;
-                } elsif (length $chunk_buffer < $chunk_len) {
+                } elsif (length $chunk_buffer < $chunk_len + 2) {
                     $chunk_buffer = $trailer . $chunk_buffer;
                     last;
                 }

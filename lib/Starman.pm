@@ -2,7 +2,7 @@ package Starman;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.3000';
+our $VERSION = '0.3001';
 
 1;
 __END__
@@ -141,6 +141,6 @@ it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 
-L<Plack> L<Catalyst::Engine::HTTP::Prefork> L<Net::Server::Prefork>
+L<Plack> L<Catalyst::Engine::HTTP::Prefork> L<Net::Server::PreFork>
 
 =cut
