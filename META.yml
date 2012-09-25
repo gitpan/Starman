@@ -23,7 +23,7 @@ no_index:
     - xt
 recommends:
   Net::Server::SS::PreFork: 0
-  Server::Starter: 0
+  Server::Starter: 0.12
 requires:
   Data::Dump: 0
   HTTP::Date: 0
@@ -37,4 +37,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/miyagawa/Starman.git
-version: 0.3001
+version: 0.3002
