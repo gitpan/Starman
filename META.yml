@@ -3,27 +3,18 @@ abstract: 'High-performance preforking PSGI/Plack web server'
 author:
   - 'Tatsuhiko Miyagawa <miyagawa@bulknews.net>'
 build_requires:
-  ExtUtils::MakeMaker: 6.59
+  Module::Build: 0.3601
   Test::More: 0
   Test::Requires: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.59
-distribution_type: module
-dynamic_config: 1
-generated_by: 'Module::Install version 1.06'
+  Module::Build: 0.3601
+dynamic_config: 0
+generated_by: 'Dist::Milla version v0.9.1, Dist::Zilla version 4.300031, CPAN::Meta::Converter version 2.130870'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Starman
-no_index:
-  directory:
-    - inc
-    - t
-    - xt
-recommends:
-  Net::Server::SS::PreFork: 0
-  Server::Starter: 0.12
 requires:
   Data::Dump: 0
   HTTP::Date: 0
@@ -33,8 +24,9 @@ requires:
   Plack: 0.9971
   Test::TCP: 1.11
   parent: 0
-  perl: 5.8.1
+  perl: 5.008001
 resources:
-  license: http://dev.perl.org/licenses/
-  repository: git://github.com/miyagawa/Starman.git
-version: 0.3006
+  bugtracker: https://github.com/miyagawa/Starman/issues
+  homepage: https://github.com/miyagawa/Starman
+  repository: https://github.com/miyagawa/Starman.git
+version: 0.3007
