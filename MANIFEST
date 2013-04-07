@@ -12,7 +12,6 @@ lib/Plack/Handler/Starman.pm
 lib/Starman.pm
 lib/Starman/Server.pm
 script/starman
-t/00-compile.t
 t/00_compile.t
 t/chunked_req.t
 t/chunked_termination.t
