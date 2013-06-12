@@ -34,7 +34,7 @@ DESCRIPTION
         Supports Server::Starter for hot deploy and graceful restarts.
 
     Multiple interfaces and UNIX Domain Socket support
-        Able to listen on multiple intefaces including UNIX sockets.
+        Able to listen on multiple interfaces including UNIX sockets.
 
     Small memory footprint
         Preloading the applications with "--preload-app" command line option

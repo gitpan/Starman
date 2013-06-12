@@ -24,7 +24,3 @@ t/rand.psgi
 t/rand.t
 t/release-pod-syntax.t
 t/suite.t
-xt/perlcritic.t
-xt/pod.t
-xt/podspell.t
-xt/synopsis.t
