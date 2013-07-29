@@ -23,4 +23,7 @@ t/lf_only_request.t
 t/rand.psgi
 t/rand.t
 t/release-pod-syntax.t
+t/ssl.t
+t/ssl_ca.pem
+t/ssl_key.pem
 t/suite.t

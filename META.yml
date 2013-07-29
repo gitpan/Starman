@@ -7,9 +7,9 @@ build_requires:
   Test::More: 0
   Test::Requires: 0
 configure_requires:
-  Module::Build::Tiny: 0.023
+  Module::Build::Tiny: 0.025
 dynamic_config: 0
-generated_by: 'Dist::Milla version v1.0.2, Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.131560'
+generated_by: 'Dist::Milla version v1.0.3, Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -28,7 +28,7 @@ requires:
   HTTP::Date: 0
   HTTP::Parser::XS: 0
   HTTP::Status: 0
-  Net::Server: 0.91
+  Net::Server: 2.007
   Plack: 0.9971
   Test::TCP: 2.00
   parent: 0
@@ -37,9 +37,10 @@ resources:
   bugtracker: https://github.com/miyagawa/Starman/issues
   homepage: https://github.com/miyagawa/Starman
   repository: https://github.com/miyagawa/Starman.git
-version: 0.3014
+version: 0.4000
 x_contributors:
   - 'Alex Vandiver <alex@chmrr.net>'
+  - 'Aristotle Pagaltzis <pagaltzis@gmx.de>'
   - 'Audrey Tang <audreyt@audreyt.org>'
   - 'Chia-liang Kao <clkao@clkao.org>'
   - 'David Steinbrunner <dsteinbrunner@pobox.com>'
