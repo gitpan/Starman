@@ -37,7 +37,7 @@ resources:
   bugtracker: https://github.com/miyagawa/Starman/issues
   homepage: https://github.com/miyagawa/Starman
   repository: https://github.com/miyagawa/Starman.git
-version: 0.4000
+version: 0.4001
 x_contributors:
   - 'Alex Vandiver <alex@chmrr.net>'
   - 'Aristotle Pagaltzis <pagaltzis@gmx.de>'
