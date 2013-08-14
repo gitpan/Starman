@@ -37,7 +37,7 @@ resources:
   bugtracker: https://github.com/miyagawa/Starman/issues
   homepage: https://github.com/miyagawa/Starman
   repository: https://github.com/miyagawa/Starman.git
-version: 0.4004
+version: 0.4005
 x_contributors:
   - 'Alex Vandiver <alex@chmrr.net>'
   - 'Aristotle Pagaltzis <pagaltzis@gmx.de>'
@@ -47,7 +47,9 @@ x_contributors:
   - 'Graham Barr <gbarr@pobox.com>'
   - 'Grant McLean <grant@catalyst.net.nz>'
   - 'Gregory Oschwald <goschwald@maxmind.com>'
+  - 'John Siracusa <siracusa@gmail.com>'
   - 'Leon Brocard <acme@astray.com>'
+  - 'Masahiro Nagano <kazeburo@gmail.com>'
   - 'Olaf Alders <olaf@wundersolutions.com>'
   - 'Paulo E. Castro <pauloedgarcastro@gmail.com>'
   - 'Perlover <perlover@perlover.com>'
