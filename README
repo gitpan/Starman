@@ -104,6 +104,9 @@ AUTHOR
     Kazuho Oku wrote Net::Server::SS::PreFork that makes it easy to add
     Server::Starter support to this software.
 
+COPYRIGHT
+    Tatsuhiko Miyagawa, 2010-
+
 LICENSE
     This library is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.

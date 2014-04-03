@@ -3,17 +3,17 @@ abstract: 'High-performance preforking PSGI/Plack web server'
 author:
   - 'Tatsuhiko Miyagawa <miyagawa@bulknews.net>'
 build_requires:
-  LWP::UserAgent: 0
-  Test::More: 0
-  Test::Requires: 0
+  LWP::UserAgent: '0'
+  Test::More: '0'
+  Test::Requires: '0'
 configure_requires:
-  Module::Build::Tiny: 0.026
+  Module::Build::Tiny: '0.035'
 dynamic_config: 0
-generated_by: 'Dist::Milla version v1.0.4, Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510'
+generated_by: 'Dist::Milla version v1.0.4, Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.140640'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Starman
 no_index:
   directory:
@@ -24,21 +24,22 @@ no_index:
     - eg
     - examples
 requires:
-  Data::Dump: 0
-  HTTP::Date: 0
-  HTTP::Parser::XS: 0
-  HTTP::Status: 0
-  Net::Server: 2.007
-  Plack: 0.9971
-  Test::TCP: 2.00
-  parent: 0
-  perl: 5.008001
+  Data::Dump: '0'
+  HTTP::Date: '0'
+  HTTP::Parser::XS: '0'
+  HTTP::Status: '0'
+  Net::Server: '2.007'
+  Plack: '0.9971'
+  Test::TCP: '2.00'
+  parent: '0'
+  perl: '5.008001'
 resources:
   bugtracker: https://github.com/miyagawa/Starman/issues
   homepage: https://github.com/miyagawa/Starman
   repository: https://github.com/miyagawa/Starman.git
-version: 0.4008
+version: '0.4009'
 x_contributors:
+  - 'Adam Guthrie <adam.guthrie@dvlgames.com>'
   - 'Alex Vandiver <alex@chmrr.net>'
   - 'Aristotle Pagaltzis <pagaltzis@gmx.de>'
   - 'Audrey Tang <audreyt@audreyt.org>'

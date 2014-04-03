@@ -2,7 +2,7 @@ package Starman;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.4008';
+our $VERSION = '0.4009';
 
 1;
 __END__
@@ -135,6 +135,11 @@ is heavily based on.
 
 Kazuho Oku wrote L<Net::Server::SS::PreFork> that makes it easy to add
 L<Server::Starter> support to this software.
+
+
+=head1 COPYRIGHT
+
+Tatsuhiko Miyagawa, 2010-
 
 =head1 LICENSE
 
